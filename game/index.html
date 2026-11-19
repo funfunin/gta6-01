@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOLMAR HEAT — an open-world crime game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game" width="1280" height="720"></canvas>
+
+  <div id="hud" class="hidden">
+    <div id="hud-top">
+      <div id="stars" title="Wanted level">☆☆☆☆☆</div>
+      <div id="health" title="Health"><div id="health-fill"></div></div>
+      <div id="cash" title="Cash">$0</div>
+      <div id="speed" title="Speed">on foot</div>
+    </div>
+    <div id="objective"></div>
+    <div id="timer"></div>
+    <canvas id="minimap" width="220" height="165" title="Minimap"></canvas>
+    <div id="hint"></div>
+  </div>
+
+  <div id="start-screen" class="overlay">
+    <div class="panel">
+      <h1>SOLMAR <span>HEAT</span></h1>
+      <p class="tagline">An open-world crime game in the sun-soaked coastal city of Solmar Bay.</p>
+      <p class="story">Dana Vega is a getaway driver with one last debt to pay. Six jobs stand
+      between Dana and the yacht waiting at the Marina. Steal cars, outrun the
+      Solmar police, and finish the story — or just cruise the city and cause trouble.</p>
+      <div class="controls">
+        <div><b>WASD / arrows</b> — move on foot / drive</div>
+        <div><b>E</b> — enter, exit or steal a car</div>
+        <div><b>Space</b> — punch (on foot)</div>
+        <div><b>Shift</b> — run</div>
+        <div><b>P / Esc</b> — pause</div>
+        <div><b>M</b> — mute</div>
+      </div>
+      <div id="save-info"></div>
+      <div id="mission-list"></div>
+      <div class="row">
+        <button id="btn-continue" class="primary">Continue — free roam</button>
+        <button id="btn-newgame">New game</button>
+      </div>
+      <p class="fine">Tip: stealing a car or hitting someone raises your wanted level — break line of sight to cool down.</p>
+    </div>
+  </div>
+
+  <div id="pause-screen" class="overlay hidden">
+    <div class="panel small">
+      <h2>Paused</h2>
+      <div class="controls">
+        <div><b>WASD / arrows</b> — move on foot / drive</div>
+        <div><b>E</b> — enter, exit or steal a car</div>
+        <div><b>Space</b> — punch (on foot)</div>
+        <div><b>Shift</b> — run</div>
+        <div><b>P / Esc</b> — resume</div>
+        <div><b>M</b> — mute</div>
+      </div>
+      <div class="row">
+        <button id="btn-resume" class="primary">Resume</button>
+        <button id="btn-quit">Main menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="end-screen" class="overlay hidden">
+    <div class="panel small">
+      <h2 id="end-title">Mission Complete</h2>
+      <p id="end-text"></p>
+      <div class="row">
+        <button id="end-primary" class="primary">Next mission</button>
+        <button id="end-secondary">Main menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
